@@ -1,26 +1,38 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Tema Coquette / Soft UI */
+    --background: 350 100% 99%;
+    --foreground: 350 5% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 350 5% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 350 5% 10%;
+    --primary: 350 80% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 350 20% 96%;
+    --secondary-foreground: 350 5% 10%;
+    --muted: 350 10% 96%;
+    --muted-foreground: 350 5% 50%;
+    --accent: 350 30% 96%;
+    --accent-foreground: 350 5% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 350 20% 96%;
+    --input: 350 20% 96%;
+    --ring: 350 80% 60%;
+    --radius: 1.25rem; /* Bordes muy redondeados */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
