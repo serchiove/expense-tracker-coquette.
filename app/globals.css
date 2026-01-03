@@ -1,37 +1,57 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  :root {
-    /* Tema Coquette / Soft UI */
-    --background: 350 100% 99%;
-    --foreground: 350 5% 10%;
-    --card: 0 0% 100%;
-    --card-foreground: 350 5% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 350 5% 10%;
-    --primary: 350 80% 60%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 350 20% 96%;
-    --secondary-foreground: 350 5% 10%;
-    --muted: 350 10% 96%;
-    --muted-foreground: 350 5% 50%;
-    --accent: 350 30% 96%;
-    --accent-foreground: 350 5% 10%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 350 20% 96%;
-    --input: 350 20% 96%;
-    --ring: 350 80% 60%;
-    --radius: 1.25rem; /* Bordes muy redondeados */
-  }
+@theme {
+  /* Aquí definimos los colores para que Tailwind genere las clases bg-background, border-border, etc. */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  /* Tu Tema Coquette */
+  --background: 350 100% 99%;
+  --foreground: 350 5% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 350 5% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 350 5% 10%;
+  --primary: 350 80% 60%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 350 20% 96%;
+  --secondary-foreground: 350 5% 10%;
+  --muted: 350 10% 96%;
+  --muted-foreground: 350 5% 50%;
+  --accent: 350 30% 96%;
+  --accent-foreground: 350 5% 10%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 350 20% 96%;
+  --input: 350 20% 96%;
+  --ring: 350 80% 60%;
+  --radius: 1.25rem;
 }
 
 @layer base {
   * {
-    /* @apply border-border;  <-- Comentado temporalmente */
-    border-color: hsl(var(--border)); /* Usamos CSS normal como respaldo */
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
