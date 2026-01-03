@@ -30,7 +30,8 @@
 
 @layer base {
   * {
-    @apply border-border;
+    /* @apply border-border;  <-- Comentado temporalmente */
+    border-color: hsl(var(--border)); /* Usamos CSS normal como respaldo */
   }
   body {
     @apply bg-background text-foreground;
